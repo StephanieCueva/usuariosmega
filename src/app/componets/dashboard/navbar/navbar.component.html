@@ -1,0 +1,10 @@
+<mat-toolbar class="toolbar">
+    <span>@StoreMega.Users</span>
+    <span class="example-spacer"></span>
+    <button *ngFor="let item of menu" [routerLink]="item.redirect" mat-button color="withe">{{item.nombre}}</button>
+    
+    <span class="example-spacer"></span>
+    <button routerLink="/"mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+  </mat-toolbar>
