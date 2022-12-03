@@ -13,28 +13,31 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class CrearUsuarioComponent implements OnInit{
   rol:any[]=['Administrador','Vendedor','Operador logistico','Teleoperador']
   sexo:any[]=['Masculino', 'Femenino'] 
-  form:FormGroup;
+  form!:FormGroup;
 
   constructor(private fb: FormBuilder,
               private _usuarioService: UsuarioService,
               private router:Router,
               private _snackBar: MatSnackBar){
-    this.form = this.fb.group({
-      usuario: ['',Validators.required],
-      nombre: ['',Validators.required],
-      apellido: ['',Validators.required],
-      rol: ['',Validators.required],
-      correo: ['',Validators.required],
-      telefono: ['',Validators.required],
-      sexo: ['',Validators.required],
-      fecha: ['',Validators.required],
-    })
+    
   }
 
   ngOnInit(): void {
-
+    this.form = this.initForm()
     }
-    
+  
+    initForm():FormGroup{
+      return this.fb.group({
+        usuario: ['',Validators.required],
+        nombre: ['',Validators.required],
+        apellido: ['',Validators.required],
+        rol: ['',Validators.required],
+        correo: ['',Validators.required],
+        telefono: ['',Validators.required],
+        sexo: ['',Validators.required],
+        fecha: ['',Validators.required],
+      })}
+  
   agregarUsuario(){
   
      const user : Usuario = {

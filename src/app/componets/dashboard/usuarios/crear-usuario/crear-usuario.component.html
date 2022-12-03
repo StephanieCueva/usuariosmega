@@ -19,21 +19,30 @@
                             <mat-form-field class="inputs">
                                 <mat-label>Usuario</mat-label >
                                 <input matInput formControlName="usuario">
+                                <div *ngIf="form.get('usuario')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('usuario')!.touched && form.get('usuario')!haserror('required')" >Este campo es requerido</div>
+                                </div>
                             </mat-form-field>
+                            
                         </mat-grid-tile>
                         <!--nombre-->
                         <mat-grid-tile [colspan]="1" [rowspan]="1">
                             <mat-form-field class="inputs">
                                 <mat-label>Nombre</mat-label>
                                 <input matInput autocomplete="off" formControlName="nombre" pattern="^[a-zA-Z ]+$">
-                              </mat-form-field>
+                                <div *ngIf="form.get('nombre')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('nombre')!.touched && form.get('nombre')!haserror('pattern')" >Formato invalido</div>
+                                </div>
+                            </mat-form-field>
                         </mat-grid-tile>
                         <!--apellido-->
                         <mat-grid-tile [colspan]="1" [rowspan]="1" >
                             <mat-form-field class="inputs">
                                 <mat-label>Apellido</mat-label>
                                 <input matInput autocomplete="off" formControlName="apellido" pattern="^[a-zA-Z ]+$">
-                              
+                                <div *ngIf="form.get('apellido')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('apellido')!.touched && form.get('apellido')!haserror('pattern')" >Formato invalido</div>
+                                </div>
                             </mat-form-field>
                         </mat-grid-tile>
                         <!--foto-->
@@ -57,7 +66,10 @@
                             <mat-form-field class="inputs">
                                 <mat-label>Email</mat-label>
                                 <input type="email" matInput autocomplete="off" formControlName="correo" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
-                              </mat-form-field>
+                                <div *ngIf="form.get('correo')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('correo')!.touched && form.get('correo')!haserror('pattern')" >Formato invalido</div>
+                                </div>
+                            </mat-form-field>
                         </mat-grid-tile>
         
                         <!--telefono-->
@@ -65,7 +77,10 @@
                             <mat-form-field class="inputs">
                                 <mat-label>telefono</mat-label>
                                 <input type="tel" maxlength="9" minlength="9" matInput formControlName="telefono">
-                              </mat-form-field>
+                                <div *ngIf="form.get('telefono')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('telefono')!.touched && form.get('telefono')!haserror('minlength')">Teléfono minimo 9 digitos</div>
+                                </div>
+                            </mat-form-field>
                         </mat-grid-tile>
                         <!--sexo-->
                         <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -82,7 +97,10 @@
                         <mat-grid-tile [colspan]="1" [rowspan]="1">
                             <mat-form-field class="inputs">
                                 <mat-label>Fecha</mat-label>
-                                <input type="date" matInput formControlName="fecha">
+                                <input type="date" matInput formControlName="fecha" >
+                                <div *ngIf="form.get('fecha')!.errors" class="invalid-feedback">
+                                    <div *ngIf="form.get('fecha')!.touched && form.get('fecha')!haserror('required')" >Fecha no debe exceder 30-11-2022</div>
+                                </div>
                               </mat-form-field>
                         </mat-grid-tile>
                          <!--seleccionar foto-->

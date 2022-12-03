@@ -17,7 +17,7 @@
         [ngClass]="{ 'is-invalid':  contactForm.get('usuario')!.errors }">
         <div *ngIf="contactForm.get('usuario')!.errors" class="invalid-feedback">
           <div *ngIf="contactForm.get('usuario')!.touched && contactForm.get('usuario')!haserror('required')" >Este campo es requerido</div>
-          <div *ngIf="contactForm.get('usuario')!haserror('minlength')">Minimo 4 caracteres</div>
+          <div *ngIf="contactForm.get('usuario')!.touched && contactForm.get('usuario')!haserror('minlength')">Minimo 4 caracteres</div>
         </div>
       </mat-form-field>
       <mat-form-field class="ancho" appearance="fill">
@@ -26,7 +26,7 @@
         [ngClass]="{ 'is-invalid':  contactForm.get('correo')!.errors }">
         <div *ngIf="contactForm.get('correo')!.errors" class="invalid-feedback">
           <div *ngIf="contactForm.get('correo')!.touched && contactForm.get('correo')!haserror('required')" >Este campo es requerido</div>
-          <div *ngIf="contactForm.get('correo')!haserror('pattern')">No se aceptan espacios</div>
+          <div *ngIf="contactForm.get('correo')!.touched && contactForm.get('correo')!haserror('pattern')">Formato invalido</div>
       </div>
       </mat-form-field>
       <mat-form-field class="ancho" appearance="fill">
@@ -35,7 +35,7 @@
         [ngClass]="{ 'is-invalid':  contactForm.get('mensaje')!.errors }">
         <div *ngIf="contactForm.get('mensaje')!.errors" class="invalid-feedback">
           <div *ngIf="contactForm.get('mensaje')!.touched && contactForm.get('mensaje')!haserror('required')" >Este campo es requerido</div>
-          <div *ngIf="contactForm.get('mensaje')!haserror('maxlength')" >Maximo 500 caracteres</div>
+          <div *ngIf="contactForm.get('mensaje')!.touched && contactForm.get('mensaje')!haserror('maxlength')" >Maximo 500 caracteres</div>
       </div>
       </mat-form-field>
       <br>

@@ -9,14 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReportesComponent implements OnInit{
   submitted:boolean=false;
   mensaje:string="Todos los datos son validos";
-  contactForm: FormGroup;
+  contactForm!: FormGroup;
 
   constructor(private fb: FormBuilder){
-    this.contactForm = this.fb.group({
-      usuario: ['',Validators.required],
-      correo: ['', Validators.required],
-      mensaje:['',Validators.required]
-    });
+   
   }
 
   ngOnInit(): void {
