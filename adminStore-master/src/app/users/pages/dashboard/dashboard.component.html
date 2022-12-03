@@ -1,0 +1,26 @@
+<highcharts-chart
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  style="width: 100%; height: 400px; display: block"
+></highcharts-chart>
+
+<div class="text">
+  <h4>Megas en tendencia</h4>
+
+  <span class="total">40</span>
+
+  <span>
+    <mat-icon color="primary">trending_up</mat-icon>
+  </span>
+
+  <span class="descripcion"> 10% </span>
+
+  <span> Tendencia</span>
+</div>
+<div class="widget">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions1"
+    style="width: 100%; height: 60px; display: block"
+  ></highcharts-chart>
+</div>
